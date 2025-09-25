@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato - Curt Linguage</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <h1 id="editable-name">Curt linguagem</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="comecar.html">Por onde começar</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="ferramentas.html">Ferramentas</a>
+      <a href="carreira.html">Carreira</a>
+      <a class="active" href="contato.html">Contato</a>
+    </nav>
+    <button id="toggle-theme">🌗</button>
+  </header>
+
+  <main>
+    <h2>Fale conosco</h2>
+    <form id="contact-form">
+      <label>Nome</label>
+      <input type="text" required />
+      <label>Email</label>
+      <input type="email" required />
+      <label>Mensagem</label>
+      <textarea required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <p id="msg" style="margin-top: 20px; font-weight: bold;"></p>
+  </main>
+
+  <footer>
+    <p>© 2025 Curt Linguage - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

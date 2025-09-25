@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg: #0f172a;
+  --bg-light: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+  --accent: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-light: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #475569;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: text;
+}
+
+header nav a {
+  margin: 0 15px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+header nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+  margin: auto;
+}
+
+header nav a:hover::after,
+header nav a.active::after {
+  width: 100%;
+}
+
+header nav a:hover {
+  color: var(--text);
+}
+
+#toggle-theme {
+  background: none;
+  border: 2px solid var(--primary);
+  padding: 0.4rem 0.6rem;
+  color: var(--primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#toggle-theme:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.hero {
+  text-align: center;
+  padding: 8rem 2rem;
+  background: var(--accent);
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  animation: fadeIn 1.2s ease;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 2.2rem;
+  background: #fff;
+  color: var(--primary);
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ---------- SEÇÕES ---------- */
+
+main {
+  padding: 4rem 10%;
+}
+
+main h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+main p {
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Roadmap */
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.stage {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  transition: 0.4s;
+}
+
+.stage:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.stage h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.stage ul {
+  text-align: left;
+  color: var(--text-muted);
+}
+
+/* Ferramentas */
+.tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tool-card {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  transition: 0.4s;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+}
+
+.tool-card h3 {
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+/* Carreira */
+.career-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.step h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Contato */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  background: var(--bg-light);
+  color: var(--text);
+}
+
+form textarea {
+  height: 120px;
+  resize: none;
+}
+
+form button {
+  margin-top: 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  transform: scale(1.05);
+}
+
+/* Botão voltar topo */
+#back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 1.6rem;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+  transition: 0.3s;
+}
+
+#back-to-top:hover {
+  background: var(--secondary);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 4rem;
+  font-size: 0.9rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.visible {
+  animation: fadeIn 1s forwards;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header nav a {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
